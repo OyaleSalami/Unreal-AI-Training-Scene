@@ -3,6 +3,13 @@
 	"EngineAssociation": "{B6E12FCC-457F-3CED-41E5-AD90CFC4C5E5}",
 	"Category": "",
 	"Description": "",
+	"Modules": [
+		{
+			"Name": "TrainingScene",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
 	"Plugins": [
 		{
 			"Name": "ModelingToolsEditorMode",
