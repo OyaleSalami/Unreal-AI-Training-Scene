@@ -8,19 +8,19 @@ EXE_PATH = r"C:\Users\Name\Project\Build\Windows\MyUnrealApp.exe"
 RES_WIDTH = 640
 RES_HEIGHT = 512
 OUTPUT_FOLDER = r"C:\Users\Name\Project\OutputData"
-CAMERA_HEIGHT = 500.0 # Height of the camera above the ground in Unreal units (1 unit = 1 m)
-TIME_OF_DAY = 1200 # Military time
-FOV = 90 # Ranging from 30 to 100
-WEATHER = 0     # An integer representing weather conditions (0 = Clear, 1 = Rainy, 2 = Foggy, etc.)
-CAMERA_BLUR = 0 # Amount of camera blur
-ATMOSPHERIC_HAZE = 0 # Amount of atmospheric haze
-CHARACTER_COUNT = 5 # Number of characters in a vehicle
-ARRIVAL_TIME= 0 # Time in seconds for vehicle arrival (has to fall within the 10 second recording window)
-ARMED_COUNT = 2 # Number of armed characters in a vehicle
-ROTATION_SPEED = 30.0 # Degrees per second for camera rotation
-VEHICLE_ID = 0 # ID of the vehicle to spawn (if applicable)
-BUILDING_ID = 0 # ID of the building to record (if applicable)
-MODE = 0 # An integer representing the sensor type (0 = VIS, 1 = IR, 2 = LWIR)
+CAMERA_HEIGHT = 500.0 	# Height of the camera above the ground in Unreal units (1 unit = 1 m)
+TIME_OF_DAY = 1200 	# Military time
+FOV = 90 		# Ranging from 30 to 100
+WEATHER = 0     	# An integer representing weather conditions (0 = Clear, 1 = Rainy, 2 = Foggy, etc.)
+CAMERA_BLUR = 0 	# Amount of camera blur
+ATMOSPHERIC_HAZE = 0 	# Amount of atmospheric haze
+CHARACTER_COUNT = 5  	# Number of characters in a vehicle
+ARRIVAL_TIME= 0 	# Time in seconds for vehicle arrival (has to fall within the 10 second recording window)
+ARMED_COUNT = 2 	# Number of armed characters in a vehicle
+ROTATION_SPEED = 30.0 	# Degrees per second for camera rotation
+VEHICLE_ID = 0 		# ID of the vehicle to spawn (if applicable)
+BUILDING_ID = 0 	# ID of the building to record (if applicable)
+MODE = 0 		# An integer representing the sensor type (0 = VIS, 1 = IR, 2 = LWIR)
 ENABLE_LOGS = True
 
 def launch_unreal_app():
