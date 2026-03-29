@@ -5,5 +5,3 @@
 * The sequencer calls MM functions every tick(Bounding Box Calculation, Pixel Data calculation)
 * The sequencer saves the file to the output and closes the application when done
 
-
-

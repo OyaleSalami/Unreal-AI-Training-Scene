@@ -2,12 +2,12 @@ import subprocess
 import os
 
 # Path to your compiled Unreal Engine Executable
-EXE_PATH = r"C:\Users\Name\Project\Build\Windows\MyUnrealApp.exe"
+EXE_PATH = r"C:\Dev\Unreal-AI-Training-Scene\TrainingScene\Saved\StagedBuilds\Windows\TrainingScene.exe"
 
 # Core Parameters
 RES_WIDTH = 640
 RES_HEIGHT = 512
-OUTPUT_FOLDER = r"C:\Users\Name\Project\OutputData"
+OUTPUT_FOLDER = r"C:\Users\HomePC\Documents\ShareX"
 CAMERA_HEIGHT = 500.0 	# Height of the camera above the ground in Unreal units (1 unit = 1 m)
 TIME_OF_DAY = 1200 	# Military time
 FOV = 90 		# Ranging from 30 to 100
@@ -28,10 +28,14 @@ def launch_unreal_app():
     if not os.path.exists(EXE_PATH):
         print(f"Error: Executable not found at {EXE_PATH}")
         return
+    if not os.path.exists(OUTPUT_FOLDER):
+	#Create path
+        os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
     # Construct the command line arguments (Unreal uses -Key=Value format for custom parameters)
     cmd = [
         EXE_PATH,
+	"TestMap",
         f"-ResX={RES_WIDTH}",
         f"-ResY={RES_HEIGHT}",
         f"-OutputDir={OUTPUT_FOLDER}",
