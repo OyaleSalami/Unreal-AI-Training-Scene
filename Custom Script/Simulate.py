@@ -1,5 +1,6 @@
 import subprocess
 import os
+from datetime import datetime
 
 # Path to your compiled Unreal Engine Executable
 EXE_PATH = r"C:\Dev\Unreal-AI-Training-Scene\TrainingScene\Saved\StagedBuilds\Windows\TrainingScene.exe"
@@ -28,17 +29,22 @@ def launch_unreal_app():
     if not os.path.exists(EXE_PATH):
         print(f"Error: Executable not found at {EXE_PATH}")
         return
-    if not os.path.exists(OUTPUT_FOLDER):
-	#Create path
-        os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+    # Create a timestamped subfolder
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    output_dir = os.path.join(OUTPUT_FOLDER, timestamp)
+    bbdata_dir = os.path.join(output_dir, "bbdata")
+
+    if not os.path.exists(bbdata_dir):
+        # Create path and the bbdata subfolder
+        os.makedirs(bbdata_dir, exist_ok=True)
 
     # Construct the command line arguments (Unreal uses -Key=Value format for custom parameters)
     cmd = [
         EXE_PATH,
-	"TestMap",
+        "TestMap",
         f"-ResX={RES_WIDTH}",
         f"-ResY={RES_HEIGHT}",
-        f"-OutputDir={OUTPUT_FOLDER}",
+        f"-OutputDir={output_dir}",
         f"-CamHeight={CAMERA_HEIGHT}",
         f"-TimeOfDay={TIME_OF_DAY}",
         f"-FOV={FOV}",
